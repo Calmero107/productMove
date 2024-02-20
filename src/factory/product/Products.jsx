@@ -45,33 +45,22 @@ export default class FactoryProducts extends Component {
           <div>
             <h1 className='text-2xl font-semibold leading-relaxed text-gray-800'>Products</h1>
           </div>
-          
+          <Link to='/factory/products/create'>
+            <button className='inline-flex gap-x-2 items-center py-2.5 px-6 text-white bg-green-500 rounded-xl hover:bg-green-700 focus:outline-none focus:ring-2 focus:bg-green-600 focus:ring-offset-1'>
+              <FiPlus className='w-6 h-6 fill-current' />
+              <span className='text-sm font-semibold tracking-wide'>Add Product</span>
+            </button>
+          </Link>
         </div>
         <div className='mb-5' >
           <div class="border border-gray-300 p-6 grid grid-cols-1 gap-6 bg-white rounded-lg">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
-                    <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                        <input type="text" placeholder="Enter name here..."
-                              class="bg-gray-300 w-full focus:outline-none text-gray-700"/>
-                    </div>
-                    <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                        <input type="text" placeholder="Enter type here..."
-                              class="bg-gray-300 w-full focus:outline-none text-gray-700"/>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
-                    <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                        <input type="text" placeholder="Enter expiry here..."
-                              class="bg-gray-300 w-full focus:outline-none text-gray-700"/>
-                    </div>
-                    <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                        <input type="text" placeholder="Enter status here..."
-                              class="bg-gray-300 w-full focus:outline-none text-gray-700"/>
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-center"><button class="p-2 border w-1/4 rounded-xl bg-green-500 text-white hover:bg-green-700 focus:outline-none  focus:bg-green-600 ">Search</button></div>
+            <form>   
+              <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+              <div class="relative">
+                  <input type="search" id="default-search" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-green-300 focus:ring-blue-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Search name" required/>
+                  <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>
+              </div>
+            </form>
           </div>
         </div>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -83,7 +72,7 @@ export default class FactoryProducts extends Component {
               <th scope="col" className="px-6 py-3">Weight</th>
               <th scope="col" className="px-6 py-3">Height</th>
               <th scope="col" className="px-6 py-3">Expiry</th>
-              <th scope="col" className="px-6 py-3">Quantity</th>
+              <th scope="col" className="px-6 py-3">Amount</th>
               <th scope="col" className="px-6 py-3">
                 <span className="sr-only">Edit</span>
               </th>
